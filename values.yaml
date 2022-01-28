@@ -8,6 +8,10 @@ authentication:
   mongodb:
     host: glog-mongodb-headless
     port: 27017
+  environment:
+    secret: verysecret
+    token:
+      expire: 3600
 
 mongodb:
   architecture: replicaset

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: authentication-environment
+data:
+  .env: |
+    {{ with .Values.authentication.environment }}
+    SECRET={{ .secret }}
+    TOKEN_EXPIRE={{ .token.expire }}
+    {{- end }}
