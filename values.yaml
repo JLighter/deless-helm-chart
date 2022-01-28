@@ -1,0 +1,15 @@
+production: false
+
+authentication:
+  image:
+    pullPolicy: IfNotPresent
+    version: latest
+    repository: glog/authentication
+  mongodb:
+    host: glog-mongodb-headless
+    port: 27017
+
+mongodb:
+  architecture: replicaset
+  auth:
+    enabled: false
