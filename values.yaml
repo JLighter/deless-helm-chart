@@ -6,7 +6,7 @@ authentication:
     version: latest
     repository: glog/authentication
   mongodb:
-    host: glog-mongodb-headless
+    host: glog-mongodb
     port: 27017
   environment:
     secret: verysecret
@@ -14,6 +14,6 @@ authentication:
       expire: 3600
 
 mongodb:
-  architecture: replicaset
+  architecture: standalone
   auth:
     enabled: false
