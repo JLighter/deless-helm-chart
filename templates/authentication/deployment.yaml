@@ -57,7 +57,7 @@ spec:
           failureThreshold: 2
         readinessProbe:
           httpGet:
-            path: /api/healthz
+            path: /healthz
             port: 80
           initialDelaySeconds: 3
           periodSeconds: 1
