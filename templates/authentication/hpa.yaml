@@ -11,11 +11,11 @@ spec:
   maxReplicas: 45
   behavior:
     scaleDown:
-      stabilizationWindowSeconds: 60
+      stabilizationWindowSeconds: 30
   metrics:
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 50
+        averageUtilization: 70
