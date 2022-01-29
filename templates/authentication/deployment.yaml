@@ -11,6 +11,7 @@ spec:
       labels:
         app: authentication
     spec:
+      terminationGracePeriodSeconds: 10
       volumes:
       - name: environment
         configMap:
@@ -20,12 +21,21 @@ spec:
             path: .env
       containers:
       - name: authentication
+        lifecycle:
+          preStop:
+            exec:
+              command:
+                - sleep
+                - '10'
         imagePullPolicy: {{ .Values.authentication.image.pullPolicy }}
         image: {{ .Values.authentication.image.repository }}:{{ .Values.authentication.image.version }}
         resources:
           requests:
-            memory: "32Mi"
-            cpu: "100m"
+            memory: "34Mi"
+            cpu: "300m"
+          limits:
+            memory: "56Mi"
+            cpu: "500m"
         env:
           - name: MONGO_URI
             valueFrom: 
